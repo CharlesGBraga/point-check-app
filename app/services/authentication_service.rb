@@ -12,22 +12,21 @@ class AuthenticationService
   end
 
   def call
-    if action == 'encode'
-      payload = build_payload
-      encode_token(payload)
-    end 
-    # decode_token(token)
+    return unless action == 'encode'
+
+    payload = build_payload
+    encode_token(payload)
   end
 
   private
 
   def build_payload
-    { 
-      "user_id": user.id, 
-      "user_name": user.name, 
+    {
+      "user_id": user.id,
+      "user_name": user.name,
       "user_email": user.email,
-      "user_cpf": user.cpf, 
-      "user_admin": user.admin 
+      "user_cpf": user.cpf,
+      "user_admin": user.admin
     }
   end
 

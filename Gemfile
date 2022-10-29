@@ -9,6 +9,7 @@ ruby '3.0.0'
 # gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # gem 'image_processing', '~> 1.2'
+# Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jwt'

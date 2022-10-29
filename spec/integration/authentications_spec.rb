@@ -29,19 +29,19 @@ RSpec.describe '/authentications', type: :request do
       }
       response 201, 'Created token' do
         let(:authentication_service) { instance_double(AuthenticationService) }
-        let(:token) { 'teste'}
+        let(:token) { 'teste' }
         let(:time) { Time.zone.now + 24.hours.to_i }
-        let(:expected_response) { 
+        let(:expected_response) do
           {
-            name: user.name, 
+            name: user.name,
             email: user.email,
             cpf: user.cpf,
             exp: time.strftime('%m-%d-%Y %H:%M'),
-            admin: user.admin, 
+            admin: user.admin,
             token: token
           }
-        }
-        
+        end
+
         before do
           # authenticate = AuthenticationService.new
           allow(AuthenticationService).to receive(:new).with(user, 'encode').and_return(authentication_service)

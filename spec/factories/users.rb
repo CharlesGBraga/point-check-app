@@ -5,7 +5,7 @@ FactoryBot.define do
     id { 1 }
     name { Faker::Name.name }
     email { Faker::Internet.email }
-    password { Faker::Internet.password }
+    password { Faker::Internet.password(min_length: 8) }
     cpf { Faker::CPF.numeric }
     created_at { '2022 04:30:54' }
     updated_at { '2022 04:30:54' }
