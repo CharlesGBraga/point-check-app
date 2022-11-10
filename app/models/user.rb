@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates :name, :email, :cpf, :admin, presence: true
   validates :password, length: { minimum: 6, maximum: 20 }
 
-  before_save do
+  before_save :downcase_email
+
+  def downcase_email
     self.email = email.downcase
   end
 end

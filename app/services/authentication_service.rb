@@ -4,7 +4,6 @@ class AuthenticationService
   attr_reader :user, :action
 
   SECRET_KEY = Rails.application.secrets.secret_key_base
-  REFRESH_EXPIRATION_TIME = 24.hours.from_now
 
   def initialize(user, action)
     @action = action
@@ -22,21 +21,21 @@ class AuthenticationService
 
   def build_payload
     {
-      "user_id": user.id,
-      "user_name": user.name,
-      "user_email": user.email,
-      "user_cpf": user.cpf,
-      "user_admin": user.admin
+      user_id: user.id,
+      user_name: user.name,
+      user_email: user.email,
+      user_cpf: user.cpf,
+      user_admin: user.admin
     }
   end
 
-  def encode_token(payload, exp = REFRESH_EXPIRATION_TIME)
+  def encode_token(payload, exp = 24.hours.from_now)
     payload[:exp] = exp.to_i
     JWT.encode(payload, SECRET_KEY)
   end
 
   def decode_token(token)
     decoded = JWT.decode(token, SECRET_KEY).first
-    HashWithIndifferentAccess.new decoded
+    ActiveSupport::HashWithIndifferentAccess.new decoded
   end
 end

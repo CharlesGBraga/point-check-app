@@ -43,9 +43,7 @@ RSpec.describe '/authentications', type: :request do
         end
 
         before do
-          # authenticate = AuthenticationService.new
           allow(AuthenticationService).to receive(:new).with(user, 'encode').and_return(authentication_service)
-          # authenticate.call
           allow(authentication_service).to receive(:call).and_return(token)
         end
 
