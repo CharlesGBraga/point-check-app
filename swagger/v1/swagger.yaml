@@ -1,0 +1,36 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/authentications":
+    post:
+      summary: Authentication
+      tags:
+      - Authentications
+      parameters: []
+      responses:
+        '201':
+          description: Created token
+        '422':
+          description: Unprocessable Entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                authentication:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      example: email@site.com
+                    password:
+                      type: string
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
