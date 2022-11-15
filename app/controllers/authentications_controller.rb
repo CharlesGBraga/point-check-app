@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class AuthenticationsController < ApplicationController
+  skip_load_and_authorize_resource
+
   def create
     @user = User.find_by(email: login_params[:email])
     if @user&.authenticate(login_params[:password])
@@ -17,14 +19,10 @@ class AuthenticationsController < ApplicationController
   end
 
   def render_json
-    token = AuthenticationService.new(@user, 'encode').call
-    time = Time.zone.now + 24.hours.to_i
+    token = AuthenticationService.new('encode', @user, nil).call
     render json: {
       name: @user.name,
       email: @user.email,
-      cpf: @user.cpf,
-      exp: time.strftime('%m-%d-%Y %H:%M'),
-      admin: @user.admin,
       token: token
     }, status: :created
   end

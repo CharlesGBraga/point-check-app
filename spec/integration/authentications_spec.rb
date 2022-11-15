@@ -35,15 +35,12 @@ RSpec.describe '/authentications', type: :request do
           {
             name: user.name,
             email: user.email,
-            cpf: user.cpf,
-            exp: time.strftime('%m-%d-%Y %H:%M'),
-            admin: user.admin,
             token: token
           }
         end
 
         before do
-          allow(AuthenticationService).to receive(:new).with(user, 'encode').and_return(authentication_service)
+          allow(AuthenticationService).to receive(:new).with('encode', user, nil).and_return(authentication_service)
           allow(authentication_service).to receive(:call).and_return(token)
         end
 

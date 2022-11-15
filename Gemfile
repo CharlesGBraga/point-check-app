@@ -12,12 +12,15 @@ gem 'jbuilder'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'cancancan'
 gem 'cpf_faker'
 gem 'jwt'
+gem 'kaminari'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
+gem 'ransack'
 gem 'rswag-api'
 gem 'rswag-ui'
 

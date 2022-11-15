@@ -8,11 +8,11 @@ RSpec.describe AuthenticationService, type: :services do
     let(:exp) { 24.hours.from_now }
     let(:payload) do
       {
-        user_id: user.id,
-        user_name: user.name,
-        user_email: user.email,
-        user_cpf: user.cpf,
-        user_admin: user.admin,
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        cpf: user.cpf,
+        admin: user.admin,
         exp: exp.to_i
       }
     end
@@ -20,7 +20,7 @@ RSpec.describe AuthenticationService, type: :services do
     let(:token) { JWT.encode(payload, secret_key) }
 
     it 'then correct params' do
-      expect(described_class.new(user, 'encode').call).to eq(token)
+      expect(described_class.new('encode', user, nil).call).to eq(token)
     end
   end
 end

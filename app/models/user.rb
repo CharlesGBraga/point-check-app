@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  attr_accessor :exp, :token
+
   validates :name, :email, :cpf, :admin, presence: true
   validates :password, length: { minimum: 6, maximum: 20 }
 

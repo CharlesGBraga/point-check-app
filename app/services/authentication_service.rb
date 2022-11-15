@@ -1,31 +1,34 @@
 # frozen_string_literal: true
 
 class AuthenticationService
-  attr_reader :user, :action
+  attr_reader :user, :token, :action
 
   SECRET_KEY = Rails.application.secrets.secret_key_base
 
-  def initialize(user, action)
+  def initialize(action, user = nil, token = nil)
     @action = action
     @user = user
+    @token = token
   end
 
   def call
-    return unless action == 'encode'
-
-    payload = build_payload
-    encode_token(payload)
+    if action == 'encode'
+      payload = build_payload
+      encode_token(payload)
+    else
+      decode_token(token)
+    end
   end
 
   private
 
   def build_payload
     {
-      user_id: user.id,
-      user_name: user.name,
-      user_email: user.email,
-      user_cpf: user.cpf,
-      user_admin: user.admin
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      cpf: user.cpf,
+      admin: user.admin
     }
   end
 
