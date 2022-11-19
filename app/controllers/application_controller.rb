@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  before_action :authorize_request, :set_current_user, unless: :except_controllers?
+  before_action :authorize_request, :set_current_user, if: :controller_exclude_list_except?
   load_and_authorize_resource
 
-  private
+  rescue_from CanCan::AccessDenied do |_e|
+    render json: { status: 401, message: 'permission denied' }, status: :unauthorized
+  end
 
-  def except_controllers?
-    params[:controller] == 'authentications' || 'welcome'
+  # rescue_from ResponseCodeException do |e|
+  #   render json: { errors: { status: e.code, message: e.message } }, status: e.code
+  # end
+
+  rescue_from ActiveRecord::RecordNotFound do |_e|
+    render json: { errors: { status: 404, message: 'not_show' } }, status: :not_found
   end
 
   def authorize_request
@@ -21,6 +27,13 @@ class ApplicationController < ActionController::API
     end
   end
 
+  private
+
+  def controller_exclude_list_except?
+    except_controllers = %w[authentications welcome]
+    except_controllers.exclude?(params[:controller])
+  end
+
   def set_token
     @token = request.headers['Authorization']
     @token = @token.split.last if @token
@@ -31,6 +44,7 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    User.new(@decoded.merge(token: @token))
+    User.new(@decoded.except(:exp))
+    # User.new(@decoded.merge(token: @token))
   end
 end

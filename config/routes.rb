@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   root to: 'welcome#index'
   resources :authentications, only: :create
-  resources :users, only: :index
+  resources :users, only: %w[index show create update destroy]
 end

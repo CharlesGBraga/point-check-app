@@ -8,6 +8,10 @@ FactoryBot.define do
     cpf { Faker::CPF.numeric }
     created_at { '2022 04:30:54' }
     updated_at { '2022 04:30:54' }
-    admin { true }
+    admin { [true, false].sample }
+
+    trait :unique_items do
+      sequence(:name) { |n| "#{Faker::Name.name} #{n + 1}" }
+    end
   end
 end

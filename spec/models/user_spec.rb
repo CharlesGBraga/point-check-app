@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
     # subject { build(:user) }
     it { is_expected.to validate_length_of(:password).is_at_least(6).is_at_most(20) }
 
-    %w[name email cpf admin].each do |field|
+    %w[name email cpf].each do |field|
       it { is_expected.to validate_presence_of(field) }
     end
   end

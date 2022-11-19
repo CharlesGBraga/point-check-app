@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
     return if user.blank?
 
-    can :read, :all
+    cannot :read, :all
     return unless user.admin?
 
     can :manage, :all

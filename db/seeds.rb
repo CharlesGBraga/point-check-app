@@ -2,6 +2,6 @@
 
 User.delete_all
 
-2.times do
+4.times do
   FactoryBot.create(:user)
 end
