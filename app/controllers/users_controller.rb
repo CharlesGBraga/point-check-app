@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   # POST /user
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(company_id: current_user.company.id))
     if @user.save
       render json: UserJbuilder.new(@user).call, status: :created
     else
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :cpf, :password, :admin)
+    params.require(:user).permit(:name, :email, :cpf, :password, :admin, :company_id)
   end
 
   def unset_current_user_list

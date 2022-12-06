@@ -73,7 +73,7 @@ paths:
                   included:
                     type: array
                     items:
-                      anyOf: []
+                      "$ref": "#/components/schemas/Company"
                   meta:
                     type: object
                     properties:
@@ -102,9 +102,9 @@ paths:
                   included:
                     type: array
                     items:
-                      anyOf: []
+                      "$ref": "#/components/schemas/Company"
         '422':
-          description: unprocessable entity
+          description: Unprocessible Entity
       requestBody:
         content:
           application/json:
@@ -150,7 +150,7 @@ paths:
                   included:
                     type: array
                     items:
-                      anyOf: []
+                      "$ref": "#/components/schemas/Company"
         '404':
           description: not found
     put:
@@ -178,7 +178,7 @@ paths:
                   included:
                     type: array
                     items:
-                      anyOf: []
+                      "$ref": "#/components/schemas/Company"
         '422':
           description: Unprocessible Entity
       requestBody:
@@ -264,6 +264,36 @@ components:
             admin:
               type: boolean
               example: 'true'
+            created_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+            updated_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+            company_id:
+              type: integer
+              example: 1
+    Company:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        type:
+          type: string
+          example: company
+        attributes:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Charles
+            phone:
+              type: string
+              example: 739.412.0117
+            cnpj:
+              type: string
+              example: '74865142854440'
             created_at:
               type: string
               example: '2020-04-26T10:20:00.000Z'

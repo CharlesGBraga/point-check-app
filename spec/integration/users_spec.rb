@@ -4,6 +4,7 @@ require 'swagger_helper'
 
 RSpec.describe '/users', type: :request do
   let(:token) { 'testes' }
+  let(:company) { create(:company) }
   let(:user_admin) { create(:user, admin: true) }
   let(:payload) do
     {
@@ -17,15 +18,6 @@ RSpec.describe '/users', type: :request do
   end
   let(:Authorization) { authentication(token) }
   let(:authentication_service) { instance_double(AuthenticationService) }
-  let(:base_url) { 'http://localhost:3000' }
-  let(:build_url) do
-    lambda do |url|
-      "#{base_url}#{url}"
-    end
-  end
-  let(:headers) do
-    { Authorization: "Bearer #{token}", 'Content-Type': 'application/json' }
-  end
 
   before do
     allow(AuthenticationService).to receive(:new).with('decode', nil, token).and_return(authentication_service)
@@ -49,7 +41,7 @@ RSpec.describe '/users', type: :request do
         schema type: :object,
                properties: {
                  data: { type: :array, items: { '$ref' => '#/components/schemas/User' } },
-                 included: { type: :array, items: { anyOf: [] } },
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/Company' } },
                  meta: {
                    type: :object,
                    properties: {
@@ -115,7 +107,7 @@ RSpec.describe '/users', type: :request do
         schema type: :object,
                properties: {
                  data: { '$ref' => '#/components/schemas/User' },
-                 included: { type: :array, items: { anyOf: [] } }
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/Company' } }
                }
         let(:name) { Faker::Name.name }
         let(:email) { Faker::Internet.email }
@@ -127,7 +119,8 @@ RSpec.describe '/users', type: :request do
               email: email,
               cpf: cpf,
               password: 'testes',
-              admin: false
+              admin: false,
+              company_id: company.id
             }
           }
         end
@@ -137,7 +130,7 @@ RSpec.describe '/users', type: :request do
         end
       end
 
-      response '422', 'unprocessable entity' do
+      response '422', 'Unprocessible Entity' do
         let(:email) { Faker::Internet.email }
         let(:cpf) { Faker::CPF.numeric }
         let(:user) do
@@ -147,7 +140,8 @@ RSpec.describe '/users', type: :request do
               email: email,
               cpf: cpf,
               password: 'testes',
-              admin: false
+              admin: false,
+              company_id: company.id
             }
           }
         end
@@ -169,7 +163,7 @@ RSpec.describe '/users', type: :request do
         schema type: :object,
                properties: {
                  data: { items: { '$ref' => '#/components/schemas/User' } },
-                 included: { type: :array, items: { anyOf: [] } }
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/Company' } }
                }
         let(:id) { create(:user).id }
 
@@ -205,7 +199,7 @@ RSpec.describe '/users', type: :request do
         schema type: :object,
                properties: {
                  data: { items: { '$ref' => '#/components/schemas/User' } },
-                 included: { type: :array, items: { anyOf: [] } }
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/Company' } }
                }
         let(:the_user) { create(:user) }
         let(:id) { the_user.id }
@@ -217,7 +211,8 @@ RSpec.describe '/users', type: :request do
               email: 'example@example.com',
               cpf: '12345678912',
               password: 'testes',
-              admin: false
+              admin: false,
+              company_id: company.id
             }
           }
         end
@@ -238,7 +233,8 @@ RSpec.describe '/users', type: :request do
               email: 'example@example.com',
               cpf: '12345678912',
               password: 'testes',
-              admin: false
+              admin: false,
+              company_id: company.id
             }
           }
         end

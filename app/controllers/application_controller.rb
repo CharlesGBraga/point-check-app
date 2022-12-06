@@ -7,10 +7,6 @@ class ApplicationController < ActionController::API
     render json: { status: 401, message: 'permission denied' }, status: :unauthorized
   end
 
-  # rescue_from ResponseCodeException do |e|
-  #   render json: { errors: { status: e.code, message: e.message } }, status: e.code
-  # end
-
   rescue_from ActiveRecord::RecordNotFound do |_e|
     render json: { errors: { status: 404, message: 'not_show' } }, status: :not_found
   end

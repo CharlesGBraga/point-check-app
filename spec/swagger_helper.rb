@@ -39,6 +39,24 @@ RSpec.configure do |config|
                   cpf: { type: :string, example: '01201201201' },
                   admin: { type: :boolean, example: 'true' },
                   created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
+                  updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
+                  company_id: { type: :integer, example: 1 }
+                }
+              }
+            }
+          },
+          Company: {
+            type: :object,
+            properties: {
+              id: { type: :integer, example: 1 },
+              type: { type: :string, example: 'company' },
+              attributes: {
+                type: :object,
+                properties: {
+                  name: { type: :string, example: 'Charles' },
+                  phone: { type: :string, example: '739.412.0117' },
+                  cnpj: { type: :string, example: '74865142854440' },
+                  created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' }
                 }
               }
