@@ -2,12 +2,13 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update destroy]
+  before_action :unset_current_user_list, only: %i[index]
+
+  load_and_authorize_resource
 
   # GET /users
   def index
-    @q = User.accessible_by(current_ability).all.ransack(params[:q])
     @users = @q.result.page(params[:page]).per(params[:per_page])
-
     render json: UserJbuilder.new(@users).call, status: :ok
   end
 
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   # PUT /user
   def update
     if @user.update(user_params)
-      render json: UserJbuilder.new(@user).call, status: :created
+      render json: UserJbuilder.new(@user).call, status: :accepted
     else
       render json: { message: 'not created', error: @user.errors }, status: :unprocessable_entity
     end
@@ -50,6 +51,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :cpf, :password, :admin)
   end
-end
 
-# Pendente TESTES e SWAG
+  def unset_current_user_list
+    @q = User.where.not(id: current_user.id).accessible_by(current_ability).ransack(params[:q])
+  end
+end

@@ -15,10 +15,21 @@ RSpec.configure do |config|
       paths: {},
       components: {
         schemas: {
+          Pagination: {
+            type: :object,
+            properties: {
+              current: { type: :integer },
+              previous: { type: :integer, nullable: true },
+              next: { type: :integer, nullable: true },
+              per_page: { type: :integer },
+              pages: { type: :integer },
+              total_count: { type: :integer }
+            }
+          },
           User: {
             type: :object,
             properties: {
-              id: { type: :string, example: '1' },
+              id: { type: :integer, example: 1 },
               type: { type: :string, example: 'users' },
               attributes: {
                 type: :object,
@@ -31,14 +42,6 @@ RSpec.configure do |config|
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' }
                 }
               }
-            }
-          },
-          Pagination: {
-            type: :object,
-            properties: {
-              self: { type: :url, example: 'http://example.com/articles' },
-              next: { type: :url, example: 'http://example.com/articles?page[offset]=2' },
-              last: { type: :url, example: 'http://example.com/articles?page[offset]=10' }
             }
           }
         },

@@ -1,7 +1,4 @@
 # frozen_string_literal: true
 
 User.delete_all
-
-4.times do
-  FactoryBot.create(:user)
-end
+FactoryBot.create_list(:user, 10, :unique_items)

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  before_action :authorize_request, :set_current_user, if: :controller_exclude_list_except?
-  load_and_authorize_resource
+  before_action :authorize_request
 
   rescue_from CanCan::AccessDenied do |_e|
     render json: { status: 401, message: 'permission denied' }, status: :unauthorized
@@ -29,22 +28,12 @@ class ApplicationController < ActionController::API
 
   private
 
-  def controller_exclude_list_except?
-    except_controllers = %w[authentications welcome]
-    except_controllers.exclude?(params[:controller])
-  end
-
   def set_token
     @token = request.headers['Authorization']
     @token = @token.split.last if @token
   end
 
-  def set_current_user
-    @current_user = current_user
-  end
-
   def current_user
-    User.new(@decoded.except(:exp))
-    # User.new(@decoded.merge(token: @token))
+    User.find(@decoded[:id])
   end
 end

@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+ENV['RAILS_ENV'] = 'test'
+
+# require 'rspec/json_expectations'
+require 'webmock/rspec'
+WebMock.disable_net_connect!
+
 require File.expand_path('../config/environment', __dir__)
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

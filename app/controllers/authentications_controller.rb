@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthenticationsController < ApplicationController
-  skip_load_and_authorize_resource
+  skip_before_action :authorize_request
 
   def create
     @user = User.find_by(email: login_params[:email])

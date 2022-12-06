@@ -29,6 +29,251 @@ paths:
                       example: email@site.com
                     password:
                       type: string
+  "/users":
+    get:
+      summary: List users
+      tags:
+      - Users
+      security:
+      - bearer: []
+      parameters:
+      - name: q[name_eq]
+        in: query
+        description: Search by name
+        required: false
+        example: name
+        schema:
+          type: string
+      - name: q[cpf_eq]
+        in: query
+        description: Search by cpf
+        required: false
+        example: '12345678912'
+        schema:
+          type: string
+      - name: q[admin_eq]
+        in: query
+        description: Search by admin
+        required: false
+        example: 'true'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: users found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/User"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+                  meta:
+                    type: object
+                    properties:
+                      pagination:
+                        "$ref": "#/components/schemas/Pagination"
+        '401':
+          description: return unauthorized
+    post:
+      summary: Create a user
+      tags:
+      - Users
+      security:
+      - bearer: []
+      description: Create and manage users
+      parameters: []
+      responses:
+        '201':
+          description: return a user created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    "$ref": "#/components/schemas/User"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+        '422':
+          description: unprocessable entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    cpf:
+                      type: string
+                    password:
+                      type: string
+                    admin:
+                      type: boolean
+  "/users/{id}":
+    get:
+      summary: Show User
+      tags:
+      - Users
+      description: Show user
+      security:
+      - bearer: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    items:
+                      "$ref": "#/components/schemas/User"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+        '404':
+          description: not found
+    put:
+      summary: Update User
+      tags:
+      - Users
+      description: Update user
+      security:
+      - bearer: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+      responses:
+        '202':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    items:
+                      "$ref": "#/components/schemas/User"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+        '422':
+          description: Unprocessible Entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Charles G. Braga
+                email:
+                  type: string
+                  example: example@example.com
+                cpf:
+                  type: string
+                  example: '12345678912'
+                password:
+                  type: string
+                  example: testes
+                admin:
+                  type: boolean
+                  example: true
+    delete:
+      summary: Destroy User
+      tags:
+      - Users
+      description: Delete user
+      security:
+      - bearer: []
+      parameters:
+      - name: id
+        in: path
+        description: user ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: deleted
+        '404':
+          description: not found
+components:
+  schemas:
+    Pagination:
+      type: object
+      properties:
+        current:
+          type: integer
+        previous:
+          type: integer
+          nullable: true
+        next:
+          type: integer
+          nullable: true
+        per_page:
+          type: integer
+        pages:
+          type: integer
+        total_count:
+          type: integer
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        type:
+          type: string
+          example: users
+        attributes:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Charles
+            email:
+              type: string
+              example: example@teste.com
+            cpf:
+              type: string
+              example: '01201201201'
+            admin:
+              type: boolean
+              example: 'true'
+            created_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+            updated_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
 servers:
 - url: http://{defaultHost}
   variables:
