@@ -93,11 +93,11 @@ RSpec.describe '/users', type: :request do
           user: {
             type: :object,
             properties: {
-              name: { type: :string },
-              email: { type: :string },
-              cpf: { type: :string },
-              password: { type: :string },
-              admin: { type: :boolean }
+              name: { type: :string, example: 'João da Silva' },
+              email: { type: :string, example: 'example@teste.com' },
+              cpf: { type: :string, example: '01201201201' },
+              password: { type: :string, example: 'minhasenha**' },
+              admin: { type: :boolean, example: true }
             }
           }
         }
@@ -187,9 +187,9 @@ RSpec.describe '/users', type: :request do
       parameter name: :user, in: :body, schema: {
         type: :object,
         properties: {
-          name: { type: :string, example: 'Charles G. Braga' },
-          email: { type: :string, example: 'example@example.com' },
-          cpf: { type: :string, example: '12345678912' },
+          name: { type: :string, example: 'Jõao da Silva' },
+          email: { type: :string, example: 'example@teste.com' },
+          cpf: { type: :string, example: '01201201201' },
           password: { type: :string, example: 'testes' },
           admin: { type: :boolean, example: true }
         }

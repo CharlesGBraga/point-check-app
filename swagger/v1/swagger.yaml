@@ -13,6 +13,20 @@ paths:
       responses:
         '201':
           description: Created token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Jõao da Silva
+                  email:
+                    type: string
+                    example: email@gmail.com
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwibmFtZSI6IkRyLiBHcmVnZyBCZWNrZXIgNyIsImVtYWlsI
         '422':
           description: Unprocessable Entity
       requestBody:
@@ -26,9 +40,10 @@ paths:
                   properties:
                     email:
                       type: string
-                      example: email@site.com
+                      example: email@gmail.com
                     password:
                       type: string
+                      example: minhasenha***
   "/users":
     get:
       summary: List users
@@ -116,14 +131,19 @@ paths:
                   properties:
                     name:
                       type: string
+                      example: João da Silva
                     email:
                       type: string
+                      example: example@teste.com
                     cpf:
                       type: string
+                      example: '01201201201'
                     password:
                       type: string
+                      example: minhasenha**
                     admin:
                       type: boolean
+                      example: true
   "/users/{id}":
     get:
       summary: Show User
@@ -189,13 +209,13 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Charles G. Braga
+                  example: Jõao da Silva
                 email:
                   type: string
-                  example: example@example.com
+                  example: example@teste.com
                 cpf:
                   type: string
-                  example: '12345678912'
+                  example: '01201201201'
                 password:
                   type: string
                   example: testes
@@ -254,7 +274,7 @@ components:
           properties:
             name:
               type: string
-              example: Charles
+              example: Jõao da Silva
             email:
               type: string
               example: example@teste.com
@@ -272,13 +292,13 @@ components:
               example: '2020-04-26T10:20:00.000Z'
             company_id:
               type: integer
-              example: 1
+              example: 1205
     Company:
       type: object
       properties:
         id:
           type: integer
-          example: 1
+          example: 1205
         type:
           type: string
           example: company
@@ -287,7 +307,7 @@ components:
           properties:
             name:
               type: string
-              example: Charles
+              example: Empresa SA
             phone:
               type: string
               example: 739.412.0117

@@ -34,13 +34,13 @@ RSpec.configure do |config|
               attributes: {
                 type: :object,
                 properties: {
-                  name: { type: :string, example: 'Charles' },
+                  name: { type: :string, example: 'Jõao da Silva' },
                   email: { type: :string, example: 'example@teste.com' },
                   cpf: { type: :string, example: '01201201201' },
                   admin: { type: :boolean, example: 'true' },
                   created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
-                  company_id: { type: :integer, example: 1 }
+                  company_id: { type: :integer, example: 1205 }
                 }
               }
             }
@@ -48,12 +48,12 @@ RSpec.configure do |config|
           Company: {
             type: :object,
             properties: {
-              id: { type: :integer, example: 1 },
+              id: { type: :integer, example: 1205 },
               type: { type: :string, example: 'company' },
               attributes: {
                 type: :object,
                 properties: {
-                  name: { type: :string, example: 'Charles' },
+                  name: { type: :string, example: 'Empresa SA' },
                   phone: { type: :string, example: '739.412.0117' },
                   cnpj: { type: :string, example: '74865142854440' },
                   created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },

@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :company do
-    name { Faker::Name.name }
+    name { Faker::Company.name }
     phone { Faker::PhoneNumber.phone_number }
     cnpj { Faker::CNPJ.numeric }
     created_at { '2022 04:30:54' }

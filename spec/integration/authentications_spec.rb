@@ -21,13 +21,20 @@ RSpec.describe '/authentications', type: :request do
           authentication: {
             type: :object,
             properties: {
-              email: { type: :string, example: 'email@site.com' },
-              password: { type: :string }
+              email: { type: :string, example: 'email@gmail.com' },
+              password: { type: :string, example: 'minhasenha***' }
             }
           }
         }
       }
       response 201, 'Created token' do
+        schema type: :object,
+               properties: {
+                 name: { type: :string, example: 'Jõao da Silva' },
+                 email: { type: :string, example: 'email@gmail.com' },
+                 token: { type: :string,
+                          example: 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwibmFtZSI6IkRyLiBHcmVnZyBCZWNrZXIgNyIsImVtYWlsI' }
+               }
         let(:authentication_service) { instance_double(AuthenticationService) }
         let(:token) { 'teste' }
         let(:time) { Time.zone.now + 24.hours.to_i }
