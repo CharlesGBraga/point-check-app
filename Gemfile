@@ -23,6 +23,7 @@ gem 'rails', '~> 7.0.4'
 gem 'ransack'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'paranoia', '~> 2.2'
 
 group :development, :test do
   gem 'brakeman'

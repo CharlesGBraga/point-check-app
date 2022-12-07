@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.accessible_by(current_ability).find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_params
@@ -53,6 +53,6 @@ class UsersController < ApplicationController
   end
 
   def unset_current_user_list
-    @q = User.where.not(id: current_user.id).accessible_by(current_ability).ransack(params[:q])
+    @q = User.where.not(id: current_user.id).ransack(params[:q])
   end
 end
