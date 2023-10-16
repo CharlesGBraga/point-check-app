@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rails_config'
+  gem 'rubocop-rspec', require: false
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'spring'

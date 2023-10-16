@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Company, type: :model do
+RSpec.describe Company do
   describe 'when db schema' do
     let(:model) { described_class.column_names }
 

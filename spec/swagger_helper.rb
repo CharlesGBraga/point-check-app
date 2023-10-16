@@ -42,7 +42,7 @@ RSpec.configure do |config|
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
                   company_id: { type: :integer, example: 1205 }
                 }
-              }              
+              }
             }
           },
           Company: {
@@ -81,7 +81,7 @@ RSpec.configure do |config|
               link: {
                 type: :object,
                 properties: {
-                  link_user: { type: :string, example: 'http://localhost:3000/users/1' } 
+                  link_user: { type: :string, example: 'http://localhost:3000/users/1' }
                 }
               }
             }

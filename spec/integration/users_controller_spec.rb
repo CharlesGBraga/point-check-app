@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-RSpec.describe '/users', type: :request do
+RSpec.describe UsersController do
   let(:token) { 'testes' }
   let(:company) { create(:company) }
   let(:user_admin) { create(:user, admin: true) }

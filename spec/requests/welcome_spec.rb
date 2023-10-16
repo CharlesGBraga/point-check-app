@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Welcomes', type: :request do
+RSpec.describe 'Welcomes' do
   describe 'GET /' do
     it 'returns http success' do
       get '/'

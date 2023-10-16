@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-RSpec.describe '/authentications', type: :request do
+RSpec.describe AuthenticationsController do
   let(:password) { Faker::Internet.password(min_length: 8) }
   let(:user) { create(:user, password: password) }
 

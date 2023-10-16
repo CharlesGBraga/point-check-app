@@ -2,11 +2,11 @@
 
 require 'rails_helper'
 
-RSpec.describe Point, type: :model do
+RSpec.describe Point do
   describe 'when db schema' do
     let(:model) { described_class.column_names }
 
-    %w[id marking marking_type approved user_id deleted_at ].each do |column|
+    %w[id marking marking_type approved user_id deleted_at].each do |column|
       it { expect(model).to include(column) }
     end
   end
@@ -22,16 +22,17 @@ RSpec.describe Point, type: :model do
   end
 end
 
-
 # @skill_rates = SkillRateQuery.by_evaluated(rates_by_evaluated)
-      # @skill_rates = []
-      # rates_by_evaluated.map do |rate|
-      #   @skill_rates << { skill_group_id: rate.skill_group_id, skill_group_name: rate.skill_group.name, skill_group_average: 3.3, 
-      #                     skills: [{ name: rate.skill.name, evaluated_average: 3.33, position_average: 2.2, rates:[{ evaluator: "Beltrano Alves", rate: 1 },
-      #                     {evaluator: "Fulano da Silva", rate: 2 },{ evaluator: "Ciclano de Souza", rate: 3 }]}] }
-      # end
+# @skill_rates = []
+# rates_by_evaluated.map do |rate|
+#   @skill_rates << { skill_group_id: rate.skill_group_id, skill_group_name: rate.skill_group.name,
+# skill_group_average: 3.3, skills: [{ name: rate.skill.name, evaluated_average: 3.33,
+# position_average: 2.2, rates:[{ evaluator: "Beltrano Alves", rate: 1 },
+#                     {evaluator: "Fulano da Silva", rate: 2 },{ evaluator: "Ciclano de Souza",
+# rate: 3 }]}] }
+# end
 
-      # rates_by_evaluated = @solicitation.rates.by_evaluated(params[:evaluated_id])
+# rates_by_evaluated = @solicitation.rates.by_evaluated(params[:evaluated_id])
 
 # update skill_groups set name = 'skill_group_1' where id = 20;
 # update skill_groups set name = 'skill_group_2' where id = 21;
@@ -75,4 +76,3 @@ end
 # update skill_groups set name = 'skill_group_40' where id = 59;
 # update skill_groups set name = 'skill_group_41' where id = 60;
 # update skill_groups set name = 'skill_group_42' where id = 61;
-
