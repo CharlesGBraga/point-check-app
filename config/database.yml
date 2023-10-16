@@ -5,16 +5,18 @@ default: &default
   encoding: unicode
   username: 'postgres'
   password: 'root'
-  port: 5433
+  port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+  host: localhost
   database: point_check_app_development
   schema_search_path: public
   
 test:
   <<: *default
+  host: localhost
   database: point_check_app_test
   schema_search_path: public
 
@@ -23,32 +25,3 @@ production:
   database: point_check_app_production
   username: point_check_app
   password: <%= ENV['POINT_CHECK_APP_DATABASE_PASSWORD'] %>
-
-
-# psql -U  postgres -h 127.0.0.1
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   username: <%= ENV['DB_USERNAME'] %>
-#   password: <%= ENV['DB_PASSWORD'] %>
-#   host: <%= ENV['DB_HOST'] %>
-#   port: <%= ENV['DB_PORT'] %>
-
-# development:
-#   <<: *default
-#   database: avd_api_development
-#   schema_search_path: public
-
-# staging:
-#   <<: *default
-#   database: avd_api_staging
-
-# test:
-#   <<: *default
-#   database: avd_api_test
-#   schema_search_path: public
-
-# production:
-#   <<: *default
-#   database: avd_api_production

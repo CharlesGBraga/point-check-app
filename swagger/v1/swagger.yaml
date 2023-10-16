@@ -44,6 +44,95 @@ paths:
                     password:
                       type: string
                       example: minhasenha***
+  "/points":
+    get:
+      summary: List points
+      tags:
+      - Points
+      security:
+      - bearer: []
+      parameters:
+      - name: q[user_id_eq]
+        in: query
+        description: Search by user id
+        required: false
+        example: 1
+        schema:
+          type: integer
+      - name: q[created_at_gteq]
+        in: query
+        description: Search created at from
+        required: false
+        example: '2022-12-16'
+        schema:
+          type: string
+      - name: q[created_at_lteq]
+        in: query
+        description: Search created at until
+        required: false
+        example: '2022-12-16'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: users found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/Point"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+                  meta:
+                    type: object
+                    properties:
+                      pagination:
+                        "$ref": "#/components/schemas/Pagination"
+        '401':
+          description: return unauthorized
+    post:
+      summary: Create a point
+      tags:
+      - Points
+      security:
+      - bearer: []
+      description: Create and manage points
+      parameters: []
+      responses:
+        '201':
+          description: return a point created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    "$ref": "#/components/schemas/Point"
+                  included:
+                    type: array
+                    items:
+                      anyOf: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                point:
+                  type: object
+                  properties:
+                    marking:
+                      type: string
+                      example: '2022-12-10T19:35:00.000Z'
+                    marking_type:
+                      type: string
+                      example: return_lunch
   "/users":
     get:
       summary: List users
@@ -320,6 +409,42 @@ components:
             updated_at:
               type: string
               example: '2020-04-26T10:20:00.000Z'
+    Point:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        type:
+          type: string
+          example: points
+        attributes:
+          type: object
+          properties:
+            marking:
+              type: string
+              example: '2022-12-16'
+            marking_type:
+              type: string
+              example: going_lunch
+            approved:
+              type: boolean
+              example: 'true'
+            user_id:
+              type: integer
+              example: 1
+            created_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+            updated_at:
+              type: string
+              example: '2020-04-26T10:20:00.000Z'
+        link:
+          type: object
+          properties:
+            link_user:
+              type: string
+              example: http://localhost:3000/users/1
   securitySchemes:
     bearer:
       type: http

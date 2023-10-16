@@ -1,7 +1,85 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/company.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/services/authentication_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          9,
+          null,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/company.rb": {
         "lines": [
           null,
           null,
@@ -11,56 +89,26 @@
           null
         ]
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/point.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/user.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/controllers/points_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           1,
-          1,
-          1,
           null,
           1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          25,
-          null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/services/authentication_service.rb": {
-        "lines": [
           null,
           null,
           1,
           1,
-          null,
           1,
           null,
+          null,
+          null,
           1,
-          1,
-          1,
-          1,
+          0,
+          null,
           null,
           null,
           1,
@@ -72,31 +120,89 @@
           null,
           null,
           null,
-          1,
           null,
           1,
+          0,
+          0,
           null,
-          1,
-          null,
-          null,
-          null,
-          null,
+          0,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
           null,
           null,
           1,
           0,
           0,
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          4,
+          null,
           null
         ]
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/controllers/welcome_controller.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          null,
+          3,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/point.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/ability.rb": {
         "lines": [
           null,
           null,
@@ -106,10 +212,44 @@
           1,
           2,
           null,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
           null
         ]
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/controllers/application_controller.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/point_jbuilder.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          7,
+          7,
+          7,
+          7,
+          7,
+          null,
+          7,
+          7,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/base_jbuilder.rb": {
         "lines": [
           null,
           null,
@@ -117,67 +257,8 @@
           1,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          11,
-          null,
-          11,
-          null,
-          11,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          11,
-          11,
-          null,
-          null,
-          1,
-          12,
-          null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/controllers/users_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
           2,
           2,
-          1,
-          null,
-          1,
-          null,
-          null,
           null,
           null,
           1,
@@ -188,104 +269,18 @@
           null,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
           1,
           null,
           1,
-          6,
-          null,
-          null,
           1,
-          6,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/ability.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          8,
-          null,
-          8,
-          8,
           null,
           7,
           null,
           null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/user_jbuilder.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          8,
-          8,
-          8,
-          8,
-          8,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          8,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/base_jbuilder.rb": {
-        "lines": [
-          null,
-          null,
           1,
           1,
           null,
           1,
-          12,
-          12,
-          null,
-          null,
-          1,
-          12,
-          1,
-          null,
-          11,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          6,
-          null,
-          null,
-          1,
-          11,
-          null,
-          3,
           null,
           null,
           1,
@@ -296,29 +291,29 @@
           null,
           null,
           1,
-          4,
+          2,
           null,
-          4,
-          null,
-          null,
-          1,
-          4,
-          6,
-          null,
-          3,
-          null,
-          4,
-          null,
-          9,
-          12,
+          2,
           null,
           null,
           1,
-          8,
-          8,
+          2,
+          7,
           null,
-          8,
-          8,
+          1,
+          null,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          7,
+          7,
+          null,
+          0,
+          0,
           null,
           null,
           null,
@@ -333,24 +328,7 @@
           null
         ]
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/company_jbuilder.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          8,
-          8,
-          8,
-          8,
-          8,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/adapters/pagination_adapter.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/adapters/pagination_adapter.rb": {
         "lines": [
           null,
           null,
@@ -385,40 +363,221 @@
           null
         ]
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/controllers/authentications_controller.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          null,
-          1,
-          2,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/channels/application_cable/connection.rb": {
+        "lines": [
           null,
           null,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/controllers/authentications_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/controllers/welcome_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/exceptions/response_code_exception.rb": {
+        "lines": [
+          null,
+          null,
+          null,
           null,
           null,
           null,
           null,
           null,
           null
-        ]
+        ],
+        "branches": {
+        }
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/channels/application_cable/channel.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/company_jbuilder.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/jbuilders/user_jbuilder.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -430,61 +589,7 @@
         "branches": {
         }
       },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/channels/application_cable/connection.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/exceptions/response_code_exception.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/charlesbraga/Documentos/Estudos/Projetos/point-check-app/app/models/paginate.rb": {
+      "/home/charles/Documentos/Estudos/Projetos/point-check-app/app/models/paginate.rb": {
         "lines": [
           null,
           null,
@@ -497,6 +602,6 @@
         }
       }
     },
-    "timestamp": 1670528180
+    "timestamp": 1697476548
   }
 }

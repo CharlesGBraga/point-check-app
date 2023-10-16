@@ -24,7 +24,11 @@ Bundler.require(*Rails.groups)
 module PointCheckApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
     config.api_only = true
+    config.encoding = 'UTF-8'
+
+    # config.time_zone = "America/New_York"
+    # config.active_record.default_timezone = :local
   end
 end

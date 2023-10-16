@@ -42,7 +42,7 @@ RSpec.configure do |config|
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
                   company_id: { type: :integer, example: 1205 }
                 }
-              }
+              }              
             }
           },
           Company: {
@@ -58,6 +58,30 @@ RSpec.configure do |config|
                   cnpj: { type: :string, example: '74865142854440' },
                   created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
                   updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' }
+                }
+              }
+            }
+          },
+          Point: {
+            type: :object,
+            properties: {
+              id: { type: :integer, example: 1 },
+              type: { type: :string, example: 'points' },
+              attributes: {
+                type: :object,
+                properties: {
+                  marking: { type: :string, example: '2022-12-16' },
+                  marking_type: { type: :string, example: 'going_lunch' },
+                  approved: { type: :boolean, example: 'true' },
+                  user_id: { type: :integer, example: 1 },
+                  created_at: { type: :string, example: '2020-04-26T10:20:00.000Z' },
+                  updated_at: { type: :string, example: '2020-04-26T10:20:00.000Z' }
+                }
+              },
+              link: {
+                type: :object,
+                properties: {
+                  link_user: { type: :string, example: 'http://localhost:3000/users/1' } 
                 }
               }
             }

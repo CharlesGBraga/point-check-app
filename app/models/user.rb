@@ -3,6 +3,7 @@
 class User < ApplicationRecord
   has_secure_password
   belongs_to :company
+  has_many :points, dependent: :destroy
   acts_as_paranoid
 
   validates :name, :email, :cpf, presence: true

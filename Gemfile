@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'redis', '~> 4.0'
@@ -17,7 +17,7 @@ gem 'cpf_faker'
 gem 'jwt'
 gem 'kaminari'
 gem 'paranoia', '~> 2.2'
-gem 'pg', '~> 1.1'
+gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
@@ -45,7 +45,7 @@ group :development, :test do
   gem 'spring'
 end
 
-group :teste do
+group :test do
   gem 'database_cleaner'
   gem 'webmock'
 end

@@ -7,6 +7,8 @@ class Ability
     return if user.blank?
 
     cannot :read, :all
+
+    can %i[read create], Point, user: user
     return unless user.admin?
 
     can :manage, :all
