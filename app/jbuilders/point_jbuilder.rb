@@ -14,9 +14,9 @@ class PointJbuilder < BaseJbuilder
     end.attributes!
   end
 
-  # def hash_includes(point)
-  #   {
-  #     UserJbuilder: point.user
-  #   }
-  # end
+  def hash_includes(point)
+    {
+      UserJbuilder: point.user
+    }
+  end
 end

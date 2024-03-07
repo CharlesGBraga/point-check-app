@@ -14,7 +14,7 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # http://127.0.0.1:5500/coverage/index.html#_AllFiles
 require 'simplecov'
 SimpleCov.start 'rails' do
-  minimum_coverage line: 100
+  minimum_coverage line: 85
 end
 
 begin

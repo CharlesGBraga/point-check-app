@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  mount Rswag::Api::Engine => '/api-docs'
-  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Ui::Engine => '/point_check_app/api-docs'
+  mount Rswag::Api::Engine => '/point_check_app/api-docs'
+
   root to: 'welcome#index'
 
   resources :authentications, only: :create

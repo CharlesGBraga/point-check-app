@@ -40,14 +40,15 @@ RSpec.describe 'Points' do
         schema type: :object,
                properties: {
                  data: { type: :array, items: { '$ref' => '#/components/schemas/Point' } },
-                 included: { type: :array, items: { anyOf: [] } },
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/User' } },
                  meta: {
                    type: :object,
                    properties: {
                      pagination: { '$ref' => '#/components/schemas/Pagination' }
                    }
                  }
-               }
+               },
+               required: %w[data included meta]
         before do
           create_list(:point, point_count, :unique_items)
         end
@@ -95,7 +96,7 @@ RSpec.describe 'Points' do
         schema type: :object,
                properties: {
                  data: { '$ref' => '#/components/schemas/Point' },
-                 included: { type: :array, items: { anyOf: [] } }
+                 included: { type: :array, items: { '$ref' => '#/components/schemas/User' } }
                }
         let(:marking) { '2022-12-10T19:35:00.000Z' }
         let(:point) do
