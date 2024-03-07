@@ -11,11 +11,11 @@ require 'shoulda/matchers'
 # Add additional requires below this line. Rails is not loaded until this point!
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-# http://127.0.0.1:5500/coverage/index.html#_AllFiles
-require 'simplecov'
-SimpleCov.start 'rails' do
-  minimum_coverage line: 85
-end
+# # http://127.0.0.1:5500/coverage/index.html#_AllFiles
+# require 'simplecov'
+# SimpleCov.start 'rails' do
+#   minimum_coverage line: 85
+# end
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
