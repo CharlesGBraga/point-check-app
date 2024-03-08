@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_194803) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_08_185348) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_194803) do
     t.bigint "company_id"
     t.datetime "deleted_at"
     t.index ["company_id"], name: "index_users_on_company_id"
+    t.index ["cpf", "company_id"], name: "index_users_on_cpf_and_company_id", unique: true
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
+    t.index ["email", "company_id"], name: "index_users_on_email_and_company_id", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

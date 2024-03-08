@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # http://127.0.0.1:5500/coverage/index.html#_AllFiles
 require 'simplecov'
 SimpleCov.start 'rails' do
