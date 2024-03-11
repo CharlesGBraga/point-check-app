@@ -7,7 +7,7 @@ RSpec.describe UserMailer do
       create(:user, email: 'test@example.com', name: 'Heather McClure', cpf: '68134831613', admin: false,
                     company: company)
     end
-    let(:mail) { described_class.welcome_email(user).deliver_now }
+    let(:mail) { described_class.welcome_email(user: user).deliver_now }
 
     it 'renders the headers' do
       expect(mail.subject).to eq('Welcome to the system')
