@@ -21,7 +21,8 @@ class User < ApplicationRecord
   private
 
   def send_welcome_mailer
-    UserMailer.welcome_email(self).deliver_later
     # UserMailer.welcome_email(self).deliver_now
+    # EmailWorker.set(wait: 1.minute).perform_async(id)
+    EmailWorker.perform_async(id)
   end
 end

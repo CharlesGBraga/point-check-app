@@ -1,72 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bem-vindo ao nosso serviço!</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    strong {
-      font-weight: bold;
-    }
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    .footer {
-      margin-top: 20px;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Welcome to our service!</h1>
-    <p>Hello <%= @user.name %>,</p>
-    <p>You have been successfully registered with our service. Below are your account details:</p>
-    <ul>
-      <li><strong>Name:</strong> <%= @user.name %></li>
-      <li><strong>E-mail:</strong> <%= @user.email %></li>
-      <li><strong>CPF:</strong> <%= @user.cpf %></li>
-      <li><strong>Admin:</strong> <%= @user.admin %></li>
-      <li><strong>Company Name:</strong> <%= @user.company.name %></li>
-      <li><strong>Company Phone:</strong> <%= @user.company.phone %></li>
-    </ul>
-    <p>Thanks for joining us!</p>
-    <img src="https://static-cse.canva.com/blob/1387998/1600w-Fr4HcxPh4Z4.jpg" alt="MDN logo" width="565" />
-  </div>
-
-  <div class="footer">
-    <p>This is an automatic email. Please don't respond.</p>
-  </div>
-</body>
-</html>
+<div class="container">
+  <h1>Welcome to our service!</h1>
+  <p>Hello <%= @user.name %>,</p>
+  <p>You have been successfully registered with our service. Below are your account details:</p>
+  <ul>
+    <li><strong>Name:</strong> <%= @user.name %></li>
+    <li><strong>E-mail:</strong> <%= @user.email %></li>
+    <li><strong>CPF:</strong> <%= @user.cpf %></li>
+    <li><strong>Admin:</strong> <%= @user.admin %></li>
+    <li><strong>Company Name:</strong> <%= @user.company.name %></li>
+    <li><strong>Company Phone:</strong> <%= @user.company.phone %></li>
+  </ul>
+  <p>Thanks for joining us!</p>  
+</div>

@@ -1,21 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seu título</title>
-  <%= csrf_meta_tags %>
-  <%= action_cable_meta_tag %>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao nosso serviço!</title>
   <style>
-    /* Estilos específicos para o layout do e-mail */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+    }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <%= yield %>
+  <img src="https://static-cse.canva.com/blob/1387998/1600w-Fr4HcxPh4Z4.jpg" alt="MDN logo" width="641" style="margin-left: 635px;" />
 </body>
+<div class="footer">
+  <p>This is an automatic email. Please don't respond.</p>
+</div>
 </html>
 

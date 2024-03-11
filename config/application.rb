@@ -30,5 +30,6 @@ module PointCheckApp
 
     # config.time_zone = "America/New_York"
     # config.active_record.default_timezone = :local
+    config.session_store :cookie_store, key: '_interslice_session'
   end
 end

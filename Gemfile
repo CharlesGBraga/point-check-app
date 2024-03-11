@@ -20,10 +20,13 @@ gem 'paranoia', '~> 2.2'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
+gem 'rack-session'
 gem 'rails', '~> 7.0.4'
 gem 'ransack'
+gem 'redis'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'brakeman'
